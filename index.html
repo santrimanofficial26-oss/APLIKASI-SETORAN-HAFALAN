@@ -157,50 +157,6 @@
             letter-spacing: 0.5px;
         }
 
-        /* Floating Action Bar (Reload & Direct Link) */
-        #floating-actions {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            z-index: 10000;
-            display: flex;
-            gap: 10px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        #floating-actions.show {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .action-btn {
-            background: rgba(6, 78, 59, 0.85);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: #ffffff;
-            padding: 10px 14px;
-            border-radius: 12px;
-            font-size: 12px;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            cursor: pointer;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            transition: all 0.2s ease;
-            text-decoration: none;
-        }
-
-        .action-btn:hover {
-            background: #047857;
-            transform: translateY(-2px);
-        }
-
-        .action-btn span {
-            font-size: 16px;
-        }
     </style>
 </head>
 <body>
@@ -229,17 +185,7 @@
             title="PENA-Q Apps Script">
         </iframe>
 
-        <!-- Floating Quick Action Bar -->
-        <div id="floating-actions" class="show">
-            <button class="action-btn" onclick="reloadIframe()" title="Refresh Aplikasi">
-                <span class="material-icons-outlined">refresh</span>
-                <span>Refresh</span>
-            </button>
-            <a class="action-btn" href="https://script.google.com/macros/s/AKfycbxr53tjLnAZiuWiV9utRskjG6RV3bDFlbevYPgyhYtwrntqKOHwKjrek7BC0l4vR7NMug/exec" target="_blank" title="Buka di Tab Baru">
-                <span class="material-icons-outlined">open_in_new</span>
-                <span>Buka Langsung</span>
-            </a>
-        </div>
+
     </div>
 
     <script>
@@ -271,13 +217,7 @@
             }
         }, 6000);
 
-        function reloadIframe() {
-            loadingScreen.style.display = 'flex';
-            loadingScreen.classList.remove('fade-out');
-            loadingStatus.innerText = "Memuat Ulang Aplikasi...";
-            iframe.classList.remove('loaded');
-            iframe.src = iframe.src;
-        }
+
 
         // Prevent Pull-to-Refresh default touch behaviors on mobile
         document.body.addEventListener('touchstart', function(e) {
