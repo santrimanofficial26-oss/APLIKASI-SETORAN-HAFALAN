@@ -1,0 +1,6 @@
+# Local Google Apps Script files (not needed for Vercel iframe wrapper deployment)
+*.gs
+html penaqu.html
+.vscode/
+.idea/
+.DS_Store
